@@ -5,11 +5,11 @@ const AboutData = () => {
     <section className='section-aboutData'>
       <div className='container'>
         <div className='grid aboutData'>
-          <div>
+          <div className='img-aboutData '>
             <img src="/asset/about.c07f3d2b.png" alt="aboutData" />
           </div>
           <div>
-            <article>
+            <article className='article-aboutData'>
               <h3 style={{color:"#fff"}}>
                 I CREATE PRODUCTS <br/> NOT JUST ART
               </h3>

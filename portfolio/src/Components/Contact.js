@@ -1,5 +1,11 @@
+/* eslint-disable no-unused-vars */
 import * as React from 'react';
 import { useForm } from '@formspree/react';
+
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+
 // import { useForm } from 'react-hook-form';
 // import * as yup from 'yup';
 // import { yupResolver } from '@hookform/resolvers/yup';
@@ -12,29 +18,50 @@ import { useForm } from '@formspree/react';
 //     message:yup.string().required()
 // });
 
-const Contact = () => {
+const boxVariant = {
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+    hidden: { opacity: 0, scale: 0 }
+  };
 
+const Contact = () => {    
     const [state, handleSubmit] = useForm("mayvlwnn");    
 
     // const {register , handleSubmit, reset} = useForm({
     //     resolver:yupResolver(schema),
-    // });
-
-    // const {name , onChange , onBlur} = register('fullName');
+    // });   
 
     // const submitForm = (data) =>{
     //     console.log({data});
     //     reset();
     // }
 
+    const control = useAnimation();
+    const [ref, inView] = useInView();
+
+    useEffect(() => {
+        if (inView) {
+          control.start("visible");
+        } 
+      }, [control, inView]);
+
   return (
-    <section className='section-contact' id='contact'>
+    <section
+        ref={ref}
+        variants={boxVariant}
+        initial="hidden"
+        animate={control}
+        className='section-contact' id='contact'>
         <div className='container'>
-            <div className='center-content'>
+            <motion.div
+                ref={ref}
+                variants={boxVariant}
+                initial="hidden"
+                animate={control}
+                className='center-content'>
                 <h2>
                     LETS TALK
                 </h2>
-            </div>
+            </motion.div>
             <div className='grid gap'>
                 <div className='input-form'>                    
                     <form className='form-control' onSubmit={handleSubmit} /*onSubmit={handleSubmit(submitForm)}*/>
@@ -73,16 +100,16 @@ const Contact = () => {
                             </h6>
                         </div>
                     </div>
-                    <div className='display-block center-content'>
+                    {/* <div className='display-block center-content'>
                         <div className='box-contact '>
                             <address>
-                                ADDRESS : India , Kerala
+                                ADDRESS : Kerala, India
                             </address>
                             <h6>
                                 MOBILE : +91 ********83
                             </h6>
                         </div>
-                    </div>                      
+                    </div>                       */}
                 </div>
             </div>
         </div>

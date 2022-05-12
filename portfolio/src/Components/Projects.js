@@ -24,15 +24,15 @@ const Projects = () => {
                 </div>
                 <div className='grid-row-2'>
                     <div className='project-tab'>                                             
-                            <img src="/asset/Project-Buson.jpeg" alt="BUSON" />
-                            <a href="https://github.com/farhaneas11/coding-challenge.git">VIEW</a>
+                            <img src="/asset/project-3.jpeg" alt="BUSON" />
+                            <a href="https://todo-context-app.netlify.app/">VIEW</a>
                     </div> 
                     <div className='project-tab'>                                             
                         <img src="/asset/Project-Buson.jpeg" alt="BUSON" />
                         <a href="https://github.com/farhaneas11/coding-challenge.git">VIEW</a>
                     </div> 
                     <div className='center-content'>
-                        <a href="*" className='know-more'>
+                        <a href="\https://github.com/farhaneas11" className='know-more'>
                             SEE MORE WORK {'>>>'}
                         </a>
                     </div>

@@ -7,7 +7,7 @@ const Header = () => {
           <nav className='header-between'>
               <div className='center-content header-a'>
                 <a href="#hero" >
-                    <h2>
+                    <h2 className='with-grading'>
                       FEAS
                     </h2>
                 </a>
